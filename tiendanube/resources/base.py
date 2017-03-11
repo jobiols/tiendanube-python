@@ -49,6 +49,10 @@ class ListResource(Resource):
         res_id = str(resource_update_dict['id'])
         return bunchify(json.loads(self._make_request(self.resource_name, resource_id=res_id, data=resource_update_dict, verb='put').text))
 
+    def delete(self, resource_delete_dict):
+        res_id = str(resource_delete_dict['id'])
+        return bunchify(json.loads(self._make_request(self.resource_name, resource_id=res_id, verb='delete').text))
+
 class ListSubResource(ListResource):
 
     def __init__(self, resource, resource_id, subresource):
