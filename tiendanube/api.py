@@ -6,7 +6,7 @@ import requests
 from furl import furl
 
 
-logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
 
 
 def _do_verb(verb, url, payload, headers):
